@@ -3,13 +3,21 @@ package studio8;
 public class SelectAllQuestion extends MultipleChoiceQuestion {
 
 	public SelectAllQuestion(String prompt, String answer, String[] choices) {
+		super(prompt, answer,1, choices);
+		
 		//Hint: 1 point per choice
 		//FIXME
 	}
 	
 	public int checkAnswer(String givenAnswer) {
+		
+		int total = 0;
+		super.displayPrompt();
+		for(int i=0;i<this.choices.length;i++) {
+			total=total+super.checkAnswer(givenAnswer);
+		}
 		//FIXME Should return partial credit (if earned)!
-		return 0;
+		return total;
 	}
 	
 	public static void main(String[] args) {

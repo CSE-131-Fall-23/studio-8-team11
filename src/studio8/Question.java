@@ -12,6 +12,7 @@ public class Question {
 	}
 	
 	public void displayPrompt() {
+		
 		System.out.println(this.prompt + "(" + this.points + " points)");
 	}
 	
